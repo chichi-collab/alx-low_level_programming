@@ -1,13 +1,13 @@
 #include "lists.h"
-void free_listint(listint_t *h)
+void free_listint(listint_t *head)
 {
-	listint_t *temperaruture;
+	listint_t *temp;
 
-	while (h)
+	while (head)
 	{
-		temperature = head->next;
+		temp = head->next;
 		free(head);
-		h = tempeature;
+		head = temp;
 	}
 }
 

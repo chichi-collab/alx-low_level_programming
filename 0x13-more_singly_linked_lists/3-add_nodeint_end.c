@@ -1,30 +1,26 @@
 #include "lists.h"
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *new_element;
-	listint_t *temps = *head;
+	listint_t *new;
+	listint_t *temp = *head;
 
-	new_element = malloc(sizeof(listint_t));
-	if (!new_element)
+	new = malloc(sizeof(listint_t));
+	if (!new)
 		return (NULL);
 
-	new_element->n = n;
-	new_element->next = NULL;
+	new->n = n;
+	new->next = NULL;
 
 	if (*head == NULL)
 	{
-		*head = new_element;
-		return (new_element);
+		*head = new;
+		return (new);
 	}
 
-	while (temps->next)
-		temps = temps->next;
+	while (temp->next)
+		temp = temp->next;
 
-	temps->next = new_element;
+	temp->next = new;
 
-	return (new_element);
+	return (new);
 }
-
-
-
-
